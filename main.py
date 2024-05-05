@@ -62,10 +62,12 @@ def newton(x_value):
                    + ((30 * t ** 4 + (sign * 300 * t ** 3) + 1020 * t ** 2 + sign * 1350 * t + 548) / 720) * del_y6)
                     / (h ** 2))
 
-    analytic = (math.pi * x_value ** 2) / 4
+    analytic_1 = math.pi * x_value / 2
+    analytic_2 = math.pi / 2
 
     print(f"Перша та друга похідні, обраховані аналітичним методом:\n "
-          f"f'(x) = f''(x) = (Pi * {x_value} ** 2) / 4 = {analytic}")
+          f"f'(x) = (Pi * x) / 2 ={analytic_1}\n"
+          f"f''(x) = Pi / 2 ={analytic_2}\n")
 
     print(f"\n____Рішення за першою інтерполяційною формулою Ньютона____\n")
 
@@ -88,14 +90,14 @@ def newton(x_value):
                                        (sign, -1)]).evalf()
 
     print(f"Значення для f'(x) = {newton_first_der} за першою формулою Ньютона")
-    delta_value = abs(analytic - newton_first_der)
-    print(f"∆ = |{analytic} - {newton_first_der}| = {delta_value}")
-    print(f"δ = {delta_value} / {analytic} = {delta_value / analytic}")
+    delta_value = abs(analytic_1 - newton_first_der)
+    print(f"∆ = |{analytic_1} - {newton_first_der}| = {delta_value}")
+    print(f"δ = {delta_value} / {analytic_1} = {delta_value / analytic_1}")
 
     print(f"\nЗначення для f''(x) = {newton_second_der} за першою формулою Ньютона")
-    delta_value = abs(analytic - newton_second_der)
-    print(f"∆ = |{analytic} - {newton_second_der}| = {delta_value}")
-    print(f"δ = {delta_value} / {analytic} = {delta_value / analytic}")
+    delta_value = abs(analytic_2 - newton_second_der)
+    print(f"∆ = |{analytic_2} - {newton_second_der}| = {delta_value}")
+    print(f"δ = {delta_value} / {analytic_2} = {delta_value / analytic_2}")
 
     print(f"\n____Рішення за другою інтерполяційною формулою Ньютона____\n")
 
@@ -118,14 +120,14 @@ def newton(x_value):
                                          (sign, 1)]).evalf()
 
     print(f"Значення для f'(x) = {newton_first_der} за другою формулою Ньютона")
-    delta_value = abs(analytic - newton_first_der)
-    print(f"∆ = |{analytic} - {newton_first_der}| = {delta_value}")
-    print(f"δ = {delta_value} / {analytic} = {delta_value / analytic}")
+    delta_value = abs(analytic_1 - newton_first_der)
+    print(f"∆ = |{analytic_1} - {newton_first_der}| = {delta_value}")
+    print(f"δ = {delta_value} / {analytic_1} = {delta_value / analytic_1}")
 
     print(f"\nЗначення для f''(x) = {newton_second_der} за другою формулою Ньютона")
-    delta_value = abs(analytic - newton_second_der)
-    print(f"∆ = |{analytic} - {newton_second_der}| = {delta_value}")
-    print(f"δ = {delta_value} / {analytic} = {delta_value / analytic}")
+    delta_value = abs(analytic_2 - newton_second_der)
+    print(f"∆ = |{analytic_2} - {newton_second_der}| = {delta_value}")
+    print(f"δ = {delta_value} / {analytic_2} = {delta_value / analytic_2}")
 
 def lagrange(x_value):
     print(f"\n____Рішення за формулою Лагранжа____\n")
@@ -133,22 +135,23 @@ def lagrange(x_value):
     first_der_f2 = (y_list_values[4] - y_list_values[2]) / (2 * h)
     second_der = (y_list_values[4] - 2 * y_list_values[3] + y_list_values[2])/ (h ** 2)
 
-    analytic = (math.pi * x_value ** 2) / 4
+    analytic_1 = math.pi * x_value / 2
+    analytic_2 = math.pi / 2
 
     print(f"Обраховане значеня за 1 формулою Лагранжа для f'(x) = {first_der_f1}")
-    delta_value = abs(analytic - first_der_f1)
-    print(f"∆ = |{analytic} - {first_der_f1}| = {delta_value}")
-    print(f"δ = {delta_value} / {analytic} = {delta_value / analytic}")
+    delta_value = abs(analytic_1 - first_der_f1)
+    print(f"∆ = |{analytic_1} - {first_der_f1}| = {delta_value}")
+    print(f"δ = {delta_value} / {analytic_1} = {delta_value / analytic_1}\n")
 
     print(f"Обраховане значеня за 2 формулою Лагранжа для f'(x) = {first_der_f2}")
-    delta_value = abs(analytic - first_der_f2)
-    print(f"∆ = |{analytic} - {first_der_f2}| = {delta_value}")
-    print(f"δ = {delta_value} / {analytic} = {delta_value / analytic}")
+    delta_value = abs(analytic_1 - first_der_f2)
+    print(f"∆ = |{analytic_1} - {first_der_f2}| = {delta_value}")
+    print(f"δ = {delta_value} / {analytic_1} = {delta_value / analytic_1}\n")
 
     print(f"Обраховане значеня за формулою Лагранжа для f''(x) = {second_der}")
-    delta_value = abs(analytic - second_der)
-    print(f"∆ = |{analytic} - {second_der}| = {delta_value}")
-    print(f"δ = {delta_value} / {analytic} = {delta_value / analytic}")
+    delta_value = abs(analytic_2 - second_der)
+    print(f"∆ = |{analytic_2} - {second_der}| = {delta_value}")
+    print(f"δ = {delta_value} / {analytic_2} = {delta_value / analytic_2}\n")
 
 
 
